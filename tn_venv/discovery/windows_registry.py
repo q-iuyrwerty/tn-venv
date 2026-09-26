@@ -65,5 +65,5 @@ def registered_pythons() -> Iterator[tuple[str, str]]:
         import winreg
     except ImportError:  # pragma: no cover
         return
-    yield from _iter_key(winreg, winreg.HKEY_CURRENT_USER, "HKCU")
-    yield from _iter_key(winreg, winreg.HKEY_LOCAL_MACHINE, "HKLM")
+    yield from _iter_key(winreg, winreg.HKEY_CURRENT_USER, "HKCU")  # type: ignore[attr-defined]
+    yield from _iter_key(winreg, winreg.HKEY_LOCAL_MACHINE, "HKLM")  # type: ignore[attr-defined]

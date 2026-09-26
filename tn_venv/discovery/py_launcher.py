@@ -22,7 +22,7 @@ def py_launcher_pythons() -> Iterator[tuple[str, str]]:
     if not py:
         return
     try:
-        proc = subprocess.run(
+        proc = subprocess.run(  # pyrefly: ignore[no-matching-overload]
             [py, "-0p"],
             stdout=subprocess.PIPE,
             stderr=subprocess.DEVNULL,
@@ -31,7 +31,7 @@ def py_launcher_pythons() -> Iterator[tuple[str, str]]:
         )
     except (OSError, subprocess.TimeoutExpired):
         return
-    if proc.returncode != 0:
+    if proc.returncode != 0:  # pyrefly: ignore[unbound-name]
         return
     for line in proc.stdout.decode("utf-8", errors="replace").splitlines():
         line = line.strip()
@@ -44,6 +44,6 @@ def py_launcher_pythons() -> Iterator[tuple[str, str]]:
             if len(parts) == 2 and os.path.exists(parts[1].strip()):
                 yield parts[0].lstrip("-"), parts[1].strip()
             continue
-        path = m.group("path").strip()
+        path = m.group("path").strip()  # pyrefly: ignore[missing-attribute]
         if os.path.exists(path):
-            yield m.group("tag"), path
+            yield m.group("tag"), path  # pyrefly: ignore[missing-attribute]
