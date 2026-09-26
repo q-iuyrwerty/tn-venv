@@ -47,6 +47,12 @@ tn_venv = ["py.typed"]
 testpaths = ["tests"]
 addopts = "-ra"
 
+[tool.pyrefly]
+project-includes = [
+    "**/*.py*",
+    "**/*.ipynb",
+]
+
 # tn-venv reads this very section for its own defaults when you run it here:
 [tool.tn-venv]
 # prompt = "my-project"

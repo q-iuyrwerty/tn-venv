@@ -109,6 +109,7 @@ class Reporter:
             return
         prefix = self.style(tag, kind) if tag else ""
         line = f"{prefix}{message}" if prefix else message
+        # pyrefly: ignore [no-matching-overload]
         print(line, file=self.stream)
 
     def error(self, message: str) -> None:
