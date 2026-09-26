@@ -52,6 +52,31 @@ project-includes = [
     "**/*.py*",
     "**/*.ipynb",
 ]
+project-excludes = [
+    ".venv/**",
+    ".github/**",
+    "build/**",
+    "dist/**",
+    "__pycache__/**",
+    "tests/**"
+]
+
+[tool.mypy]
+
+exclude = [
+    "\\.venv/",
+    "\\.github/",
+    "build/",
+    "dist/",
+    "__pycache__/",
+    "tests/"
+]
+
+mypy_path = ["."]
+
+ignore_missing_imports = false
+
+cache_dir = ".mypy_cache"
 
 # tn-venv reads this very section for its own defaults when you run it here:
 [tool.tn-venv]
