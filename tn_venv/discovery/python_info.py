@@ -120,7 +120,7 @@ class PythonInfo:
         return cls(
             executable=os.path.abspath(sys.executable),
             base_executable=os.path.abspath(base_exe),
-            version_info=tuple(sys.version_info[:3]),
+            version_info=tuple(sys.version_info[:3]),  # type: ignore[arg-type]
             implementation=getattr(sys.implementation, "name", "cpython"),
             prefix=sys.prefix,
             base_prefix=getattr(sys, "base_prefix", sys.prefix),

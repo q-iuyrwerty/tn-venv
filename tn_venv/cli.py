@@ -37,7 +37,7 @@ examples:
 
 class _Parser(argparse.ArgumentParser):
     # pyrefly: ignore [bad-override]
-    def error(self, message: str) -> None:  # exit code 2 with clean message
+    def error(self, message: str) -> None:  # type: ignore[override]  # exit code 2 with clean message
         self.print_usage(sys.stderr)
         self.exit(2, f"{self.prog}: error: {message}\n")
 
@@ -154,7 +154,7 @@ def _resolve_options(
         env_cfg = load_env_config(environ)
         explicit = cli.get("config") or environ.get("TN_VENV_CONFIG_FILE")
         # pyrefly: ignore [bad-argument-type]
-        config_path = Path(explicit).expanduser() if explicit else find_default_config()
+        config_path = Path(explicit).expanduser() if explicit else find_default_config()  # type: ignore[arg-type]
         file_cfg = load_file_config(config_path)
     merged = merge_config(cli, env_cfg, file_cfg)
     dest = args.dest or ".venv"
