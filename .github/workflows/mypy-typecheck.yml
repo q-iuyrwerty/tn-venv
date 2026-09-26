@@ -1,4 +1,4 @@
-name: Pyrefly Type Check (uv)
+name: Mypy Type Check
 on:
   pull_request:
     branches: [master]
