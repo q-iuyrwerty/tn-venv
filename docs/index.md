@@ -1,5 +1,7 @@
 # tn-venv
 
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?logo=paypal)](https://paypal.me/tokenoodle)
+
 **Create Python virtual environments with one command — batteries included.**
 
 `tn-venv` is a zero-dependency, batteries-included replacement for
