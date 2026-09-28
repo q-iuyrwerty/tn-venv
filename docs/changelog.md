@@ -6,6 +6,11 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.7] — 2026-09-28
+
+### Deleted
+- Unused import `dataclasses.field` in `tn_venv/config/spec.py`.
+
 ## [0.1.6] — 2026-09-26
 
 ### Fixed
