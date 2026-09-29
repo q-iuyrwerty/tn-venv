@@ -78,11 +78,12 @@ class Options:
     def wants_pip(self) -> bool:
         return not self.no_pip and self.seeder != "none"
 
+    # See #8 for why
     @classmethod
     def from_mapping(cls, values: dict[str, object]) -> "Options":
         known = {f for f in cls.__dataclass_fields__ if f != "command"}  # type: ignore[attr-defined]
-        filtered = {k: v for k, v in values.items() if k in known and v is not None}
-        # normalise list-typed fields
+        vals = dict(values)
+        # normalise list‑typed fields: None → [] before filtering
         for key in (
             "python",
             "extra_search_dir",
@@ -90,8 +91,10 @@ class Options:
             "requirements",
             "activators",
         ):
-            if key in filtered and filtered[key] is None:
-                filtered[key] = []
+            if key in vals and vals[key] is None:
+                vals[key] = []
+
+        filtered = {k: v for k, v in vals.items() if k in known and v is not None}
         return cls(**filtered)  # type: ignore[arg-type]
 
 
