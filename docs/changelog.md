@@ -6,6 +6,17 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.9] — 2026-09-29
+
+### Fixed
+- `Options.from_mapping` normalises explicit `None` values for list options
+  (`python`, `extra_search_dir`, `seed_packages`, `requirements`,
+  `activators`) to empty lists *before* filtering; previously the
+  normalisation loop was dead code and could never run.
+- Fixes [#8](https://github.com/tokenoodle-everything/tn-venv/issues/8).
+- Fixes [#9](https://github.com/tokenoodle-everything/tn-venv/issues/9).
+
+
 ## [0.1.8] — 2026-09-29
 
 ### Added
@@ -13,7 +24,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.1.7] — 2026-09-28
 
-### Deleted
+### Removed
 - Unused import `dataclasses.field` in `tn_venv/config/spec.py`.
 
 ## [0.1.6] — 2026-09-26
@@ -28,7 +39,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 - [mypy](https://mypy-lang.org/) static type checking, running alongside
-  mypy: `[tool.mypy]` configuration in `pyproject.toml`, a
+  pyrefly: `[tool.mypy]` configuration in `pyproject.toml`, a
   `mypy-typecheck` GitHub Actions workflow, and `.mypy_cache/` added to
   `.gitignore`.
 - pyrefly `project-excludes` covering `.venv`, `.github`, build outputs,
