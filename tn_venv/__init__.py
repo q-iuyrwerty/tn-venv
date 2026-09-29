@@ -21,7 +21,7 @@ from .errors import (
     InterpreterNotFoundError,
     SeedError,
     TnVenvError,
-    TNError
+    TNError,
 )
 from .session import Options, SessionResult, create_venv
 from .version import __version__, __version_tuple__
@@ -48,5 +48,5 @@ __all__ = [
     "InterpreterNotFoundError",
     "SeedError",
     "ActivateError",
-    "TNError"
+    "TNError",
 ]
