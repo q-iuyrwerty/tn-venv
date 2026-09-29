@@ -8,5 +8,5 @@ tn_venv.egg-info/
 
 # docs
 _build/
-docs/make.bat
-docs/Makefile
+# docs/make.bat
+# docs/Makefile
