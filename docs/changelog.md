@@ -6,6 +6,11 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.7] — 2026-09-29
+
+### Added
+- Add alias `TNError` back to public API.
+
 ## [0.1.7] — 2026-09-28
 
 ### Deleted
